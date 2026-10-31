@@ -1,0 +1,67 @@
+/* ====================================================================
+   自定义样式表
+   这个文件会在主题样式之后加载，所以这里的规则优先级更高。
+   改完保存 → 重新发布（.\publish.cmd）即可在线上看到效果。
+
+   下面每一条都是独立开关，不需要就整段删掉或注释掉。
+   ==================================================================== */
+
+/* ---------- 1. 内容区更宽 / 更窄 ----------
+   默认最大宽度约 860px。想读得更舒展就调大，想更像卡片就调小。 */
+.post-content {
+  /* max-width: 780px; */
+}
+
+/* ---------- 2. 文章正文行高与段落间距 ----------
+   中文博客行高 1.8 ~ 2.0 比较舒服。 */
+.markdown-body {
+  line-height: 1.9;
+}
+.markdown-body p {
+  margin-bottom: 1.1em;
+}
+
+/* ---------- 3. 导航栏毛玻璃效果 ----------
+   顶部菜单半透明 + 模糊，滚动时更有质感。 */
+#navbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(47, 65, 84, 0.82) !important;
+}
+
+/* ---------- 4. 卡片圆角与阴影 ----------
+   首页文章列表的卡片更柔和。 */
+.index-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.index-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- 5. 图片圆角 ---------- */
+.markdown-body img {
+  border-radius: 8px;
+}
+
+/* ---------- 6. 代码块更柔和 ---------- */
+.markdown-body pre {
+  border-radius: 10px;
+}
+
+/* ---------- 7. 隐藏某一块 ----------
+   例如不想要右侧目录，取消注释即可（也可直接在 _config.fluid.yml 里关） */
+/*
+#toc {
+  display: none;
+}
+*/
+
+/* ---------- 8. 给正文加中文字体 ----------
+   不想用系统默认字体时可以指定，注意字体要先装在本机才生效 */
+/*
+.markdown-body {
+  font-family: "Microsoft YaHei", "PingFang SC", "Source Han Sans SC", sans-serif;
+}
+*/
